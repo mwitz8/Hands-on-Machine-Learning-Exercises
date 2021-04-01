@@ -1172,5 +1172,125 @@ var updateDatabase = function() {
     TacticianCards: 5,
     VictoryPointsToWin: 8
   }, 27, 0.81);
+  addCombination({ //JH01 Las Eras
+    Spanish: 1,
+    FieldWorks: 6,
+    Castles: 1,
+    LineInfantry: 2,
+    MilitiaInfantry: 18,
+    LightCavalry: 1,
+    FootArtillery: 2,
+    Commander: 4,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightCavalry: 2,
+    FootArtillery: 1,
+    LightLancerCavalry: 1,
+    Commander: 1,
+    MoveFirst: 1,
+    CommandCards: 5,
+    TacticianCards: 4,
+    VictoryPointsToWin: 8
+  }, 1, 1.0);
+  addCombination({ //306 Clash At Pordenone
+    Austrian: 1,
+    LineInfantry: 2,
+    GrenzerInfantry: 2,
+    LightCavalry: 4,
+    LightLancerCavalry: 1,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 3,
+    MoveFirst: 1,
+    VictoryPointsToWin: 5
+  }, {
+    French: 1,
+    LineInfantry: 4,
+    LightCavalry: 4,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 2,
+    CommandCards: 4,
+    TacticianCards: 3,
+    VictoryPointsToWin: 5
+  }, 56, 0.66);
+  addCombination({ //307 Sacile
+    VictoryPointsOnSide: 1,
+    Austrian: 1,
+    LineInfantry: 5,
+    GrenadierInfantry: 3,
+    GrenzerInfantry: 3,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    FootArtillery: 3,
+    Commander: 5,
+    CommandCards: 5,
+    TacticianCards: 2,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    LineInfantry: 12,
+    LightInfantry: 2,
+    LightCavalry: 2,
+    FootArtillery: 3,
+    Commander: 5,
+    CommandCards: 5,
+    TacticianCards: 3,
+    MoveFirst: 1,
+    VictoryPointsToWin: 8
+  }, 47, 0.70);
+  addCombination({ //308 Teugen-Hausen
+    VictoryPointsOnSide: 3,
+    Austrian: 1,
+    LineInfantry: 10,
+    GrenzerInfantry: 2,
+    LightCavalry: 1,
+    FootArtillery: 2,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 3,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    LineInfantry: 9,
+    LightInfantry: 3,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 5,
+    MoveFirst: 1,
+    VictoryPointsToWin: 8
+  }, 61, 0.62);
+  addCombination({ //309 Rohr
+    Austrian: 1,
+    LineInfantry: 6,
+    GrenzerInfantry: 1,
+    LightCavalry: 1,
+    HeavyCavalry: 1,
+    FootArtillery: 1,
+    Commander: 2,
+    MoveFirst: 1,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 5
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightInfantry: 2,
+    LightCavalry: 3,
+    HeavyCuirassierCavalry: 1,
+    FootArtillery: 1,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 5
+  }, 52, 0.40);
 }
 updateDatabase();
