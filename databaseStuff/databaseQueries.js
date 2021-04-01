@@ -1292,5 +1292,231 @@ var updateDatabase = function() {
     TacticianCards: 5,
     VictoryPointsToWin: 5
   }, 52, 0.40);
+  addCombination({ //310 Eggmuhl
+    Austrian: 1,
+    LineInfantry: 11,
+    GrenzerInfantry: 1,
+    LightCavalry: 1,
+    FootArtillery: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 3,
+    VictoryPointsToWin: 6
+  }, {
+    French: 1,
+    LineInfantry: 10,
+    LightInfantry: 3,
+    FootArtillery: 2,
+    Commander: 4,
+    MoveFirst: 1,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 6
+  }, 52, 0.44);
+  addCombination({ //311 Eggmuhl
+    Austrian: 1,
+    VictoryPointsOnSide: 2,
+    Castles: 1,
+    LineInfantry: 4,
+    GrenzerInfantry: 3,
+    FootArtillery: 2,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 5
+  }, {
+    French: 1,
+    LineInfantry: 4,
+    LightInfantry: 5,
+    HorseArtillery: 1,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 2,
+    MoveFirst: 1,
+    VictoryPointsToWin: 5
+  }, 40, 0.48);
+  addCombination({ //312 Eggmuhl
+    FieldWorks: 1,
+    Austrian: 1,
+    LineInfantry: 10,
+    GrenadierInfantry: 2,
+    GrenzerInfantry: 3,
+    LightCavalry: 3,
+    FootArtillery: 3,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 9
+  }, {
+    French: 1,
+    LineInfantry: 12,
+    LightInfantry: 2,
+    LightCavalry: 4,
+    HeavyCuirassierCavalry: 2,
+    FootArtillery: 2,
+    Commander: 4,
+    CommandCards: 6,
+    TacticianCards: 5,
+    MoveFirst: 1,
+    VictoryPointsToWin: 9
+  }, 35, 0.40);
+  addCombination({ //313 Eggmuhl
+    Austrian: 1,
+    LineInfantry: 9,
+    GrenzerInfantry: 2,
+    LightCavalry: 3,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightInfantry: 4,
+    HeavyCuirassierCavalry: 4,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 4,
+    MoveFirst: 1,
+    CommandCards: 6,
+    TacticianCards: 6,
+    VictoryPointsToWin: 8
+  }, 28, 0.14);
+  addCombination({ //315 Aspern-Essling
+    Austrian: 1,
+    LineInfantry: 10,
+    LightInfantry: 2,
+    GrenzerInfantry: 1,
+    MilitiaInfantry: 2,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    HeavyCuirassierCavalry: 1,
+    LightLancerCavalry: 1,
+    FootArtillery: 3,
+    Commander: 4,
+    MoveFirst: 1,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 12
+  }, {
+    French: 1,
+    VictoryPointsOnSide: 3,
+    LineInfantry: 7,
+    LightInfantry: 3,
+    LightCavalry: 2,
+    HeavyCuirassierCavalry: 2,
+    GuardHeavyCavalry: 1,
+    FootArtillery: 3,
+    Commander: 6,
+    CommandCards: 6,
+    TacticianCards: 6,
+    VictoryPointsToWin: 12
+  }, 39, 0.38);
+  addCombination({ //316 Aspern-Essling
+    Austrian: 1,
+    MoveFirst: 1,
+    LineInfantry: 10,
+    LightInfantry: 1,
+    MilitiaInfantry: 1,
+    LightCavalry: 3,
+    HeavyCavalry: 1,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 9
+  }, {
+    French: 1,
+    VictoryPointsOnSide: 2,
+    LineInfantry: 5,
+    LightInfantry: 3,
+    LightCavalry: 3,
+    HeavyCuirassierCavalry: 1,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 4,
+    CommandCards: 6,
+    TacticianCards: 6
+    VictoryPointsToWin: 9
+  }, 38, 0.50);
+  addCombination({ //318 Wagram
+    Austrian: 1,
+    LineInfantry: 8,
+    LightInfantry: 1,
+    MilitiaInfantry: 2,
+    LightCavalry: 1,
+    FootArtillery: 3,
+    Commander: 3,
+    VictoryPointsToWin: 6,
+    CommandCards: 4,
+    TacticianCards: 3,
+    FieldWorks: 2
+  }, {
+    French: 1,
+    MoveFirst: 1,
+    LineInfantry: 7,
+    LightInfantry: 5,
+    LightCavalry: 3,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 6
+  }, 43, 0.51);
+  addCombination({ //320 Wagram
+    Austrian: 1,
+    VictoryPointsOnSide: 1,
+    LineInfantry: 10,
+    LightInfantry: 2,
+    MilitiaInfantry: 1,
+    LightCavalry: 4,
+    HeavyCuirassierCavalry: 1,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 5,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 12
+  }, {
+    French: 1,
+    LineInfantry: 11,
+    LightInfantry: 4,
+    LightCavalry: 3,
+    HeavyCuirassierCavalry: 1,
+    HeavyCavalry: 2,
+    FootArtillery: 4,
+    HorseArtillery: 1,
+    Commander: 6,
+    MoveFirst: 1,
+    CommandCards: 6,
+    TacticianCards: 5,
+    VictoryPointsToWin: 12
+  }, 30, 0.33);
+  addCombination({ //BH03 Landshut
+    Austrian: 1,
+    Castles: 1,
+    VictoryPointsOnSide: 1,
+    LineInfantry: 5,
+    LightInfantry: 1,
+    GrenzerInfantry: 2,
+    LightCavalry: 1,
+    LightLancerCavalry: 1,
+    FootArtillery: 2,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 2,
+    VictoryPointsToWin: 7
+  }, {
+    French: 1,
+    LineInfantry: 7,
+    LightInfantry: 2,
+    GrenadierInfantry: 1,
+    LightCavalry: 3,
+    FootArtillery: 3,
+    Commander: 4
+  }, 5, 0.80);
 }
 updateDatabase();
