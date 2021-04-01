@@ -37,6 +37,7 @@ var addCombination = function(side1, side2, games, percentSide1Won) {
         `, (err, res) => {
         console.log(err, res);
       });
+      console.log('uploaded datapoint ' + index);
       index++;
     }
   }
@@ -77,7 +78,7 @@ var updateDatabase = function() {
   addCombination({ //FG01 Alentejo
     Portuguese: 1,
     LineInfantry: 5,
-    Militia infantry: 1,
+    MilitiaInfantry: 1,
     Commander: 3,
     FootArtillery: 2,
     LightInfantry: 2,
@@ -162,7 +163,7 @@ var updateDatabase = function() {
     GrenadierInfantry: 3,
     LightCavalry: 2,
     FootArtillery: 3,
-    Commander: 2
+    Commander: 2,
     VictoryPointsOnSide: 1,
     VictoryPointsToWin: 7,
     CommandCards: 5,
@@ -282,7 +283,7 @@ var updateDatabase = function() {
     FootArtillery: 2,
     Commander: 4,
     CommandCards: 6,
-    TacticianCards: 5
+    TacticianCards: 5,
     VictoryPointsOnSide: 1,
     VictoryPointsToWin: 11
   }, 28, 0.29);
@@ -336,7 +337,7 @@ var updateDatabase = function() {
     Commander: 4,
     VictoryPointsToWin: 7,
     CommandCards: 5,
-    TacticianCards: 2
+    TacticianCards: 2,
     VictoryPointsOnSide: 3,
     VictoryPointsToWin: 7
   }, 4, 0.5);
@@ -347,7 +348,7 @@ var updateDatabase = function() {
     RifleLightInfantry: 1,
     GrenadierInfantry: 1,
     HorseArtillery: 1,
-    Commander: 3
+    Commander: 3,
     VictoryPointsToWin: 4,
     CommandCards: 5
   }, {
@@ -634,5 +635,63 @@ var updateDatabase = function() {
     TacticianCards: 5,
     VictoryPointsToWin: 7
   }, 53, 0.19);
+  addCombination({ //403 Jena
+    Prussian: 1,
+    LineInfantry: 7,
+    LightInfantry: 2,
+    GrenadierInfantry: 2,
+    LightCavalry: 2,
+    HeavyCuirassierCavalry: 1,
+    LightLancerCavalry: 1,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 4,
+    VictoryPointsOnSide: 1,
+    VictoryPointsToWin: 8,
+    CommandCards: 4,
+    TacticianCards: 3
+  }, {
+    French: 1,
+    LineInfantry: 7,
+    LightInfantry: 3,
+    YoungGuard: 1,
+    LightCavalry: 4,
+    HeavyCuirassierCavalry: 1,
+    GuardHeavyCavalry: 1,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    GuardFootArtillery: 1,
+    Commander: 5,
+    CommandCards: 6,
+    TacticianCards: 6,
+    MoveFirst: 1
+  }, 60, 0.38);
+  addCombination({ //404 Auerstadt
+    Prussian: 1,
+    LineInfantry: 8,
+    GrenadierInfantry: 2,
+    GuardGrenadierInfantry: 1,
+    LightCavalry: 1,
+    HeavyCavalry: 3,
+    HeavyCuirassierCavalry: 1,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 4,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsOnSide: 2,
+    VictoryPointsToWin: 10
+  }, {
+    French: 1,
+    LineInfantry: 10,
+    LightInfantry: 3,
+    LightCavalry: 2,
+    FootArtillery: 3,
+    HorseArtillery: 1,
+    Commander: 5,
+    VictoryPointsToWin: 10,
+    CommandCards: 6,
+    TacticianCards: 5
+  }, 65, 0.2)
 }
 updateDatabase();
