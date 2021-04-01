@@ -692,6 +692,248 @@ var updateDatabase = function() {
     VictoryPointsToWin: 10,
     CommandCards: 6,
     TacticianCards: 5
-  }, 65, 0.2)
+  }, 65, 0.2);
+  addCombination({ //405 Halle
+    Prussian: 1,
+    LineInfantry: 1,
+    LightInfantry: 2,
+    LightCavalry: 1,
+    HeavyCavalry: 1,
+    HorseArtillery: 2,
+    Commander: 1,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 4
+  }, {
+    French: 1,
+    LineInfantry: 2,
+    LightInfantry: 3,
+    LightCavalry: 1,
+    FootArtillery: 2,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 4,
+    VictoryPointsToWin: 4,
+    MoveFirst: 1
+  }, 38, 0.29);
+  addCombination({ //406 Halle
+    Prussian: 1,
+    LineInfantry: 5,
+    LightInfantry: 2,
+    GrenadierInfantry: 2,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    FootArtillery: 2,
+    HorseArtillery: 2,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    LineInfantry: 7,
+    LightInfantry: 4,
+    LightCavalry: 4,
+    FootArtillery: 2,
+    HorseArtillery: 2,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 4,
+    MoveFirst: 1,
+    VictoryPointsToWin: 8
+  }, 29, 0.21);
+  addCombination({ //407 Altenzaun
+    Prussian: 1,
+    LineInfantry: 2,
+    LightInfantry: 5,
+    FootArtillery: 2,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 4,
+    MoveFirst: 1,
+    VictoryPointsToWin: 5
+  }, {
+    French: 1,
+    LineInfantry: 6,
+    LightInfantry: 2,
+    LightCavalry: 4,
+    FootArtillery: 2,
+    Commander: 2,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 5
+  }, 41, 0.61);
+  addCombination({ //408 Zehdenick
+    Prussian: 1,
+    LightInfantry: 1,
+    LightCavalry: 3,
+    HeavyCavalry: 3,
+    HorseArtillery: 1,
+    Commander: 3,
+    MoveFirst: 0.5,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 4
+  }, {
+    French: 1,
+    LightCavalry: 3,
+    HeavyCavalry: 6,
+    HorseArtillery: 1,
+    Commander: 3,
+    MoveFirst: 0.5,
+    CommandCards: 4,
+    TacticianCards: 4,
+    VictoryPointsToWin: 4
+  }, 26, 0.19);
+  addCombination({ //410 Waren-Nossentin
+    Prussian: 1,
+    LightInfantry: 4,
+    LightCavalry: 3,
+    HeavyCavalry: 1,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 4,
+    VictoryPointsToWin: 4
+  }, {
+    French: 1,
+    LightInfantry: 3,
+    LightCavalry: 6,
+    LightLancerCavalry: 1,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 4,
+    CommandCards: 4,
+    TacticianCards: 4,
+    MoveFirst: 1,
+    VictoryPointsToWin: 4
+  }, 22, 0.18);
+  addCombination({ //411 Waren-Nossentin
+    Prussian: 1,
+    LightInfantry: 5,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 4,
+    MoveFirst: 1,
+    VictoryPointsToWin: 5
+  }, {
+    French: 1,
+    LineInfantry: 4,
+    LightInfantry: 3,
+    LightCavalry: 4,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 4,
+    VictoryPointsToWin: 5
+  }, 24, 0.33);
+  addCombination({ //412 Lubeck
+    Prussian: 1,
+    VictoryPointsOnSide: 1,
+    FieldWorks: 2,
+    Castles: 1,
+    LineInfantry: 2,
+    LightInfantry: 2,
+    GrenadierInfantry: 1,
+    LightCavalry: 1,
+    FootArtillery: 4,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 5,
+    VictoryPointsToWin: 7
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightInfantry: 3,
+    LightCavalry: 2,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 4,
+    VictoryPointsToWin: 7,
+    MoveFirst: 1
+  }, 35, 0.46);
+  addCombination({ //004 Corunna
+    British: 1,
+    LineInfantry: 6,
+    LightInfantry: 2,
+    RifleLightInfantry: 1,
+    GuardGrenadierInfantry: 1,
+    LightCavalry: 1,
+    FootArtillery: 1,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 4,
+    VictoryPointsToWin: 6
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightInfantry: 3,
+    HeavyCavalry: 2,
+    FootArtillery: 2,
+    Commander: 3,
+    CommandCards:5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 6,
+    MoveFirst: 1
+  }, 150, 0.56);
+  addCombination({ //005 Talavera
+    British: 1,
+    LineInfantry: 6,
+    LightInfantry: 1,
+    RifleLightInfantry: 1,
+    GuardGrenadierInfantry: 1,
+    LightCavalry: 3,
+    GuardHeavyCavalry: 1,
+    FootArtillery: 3,
+    Commander: 3,
+    CommandCards: 6,
+    TacticianCards: 5,
+    VictoryPointsToWin: 7
+  }, {
+    French: 1,
+    LineInfantry: 10,
+    LightInfantry: 3,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    FootArtillery: 3,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 2,
+    MoveFirst: 1,
+    VictoryPointsToWin: 7
+  }, 157, 0.46);
+  addCombination({ //011 Salamanca
+    British: 1,
+    LineInfantry: 7,
+    LightInfantry: 1,
+    RifleLightInfantry: 1,
+    GuardGrenadierInfantry: 2,
+    LightCavalry: 2,
+    HeavyCavalry: 2,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 3,
+    MoveFirst: 1,
+    CommandCards: 6,
+    TacticianCards: 6,
+    VictoryPointsToWin: 6,
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightInfantry: 3,
+    LightCavalry: 1,
+    FootArtillery: 2,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 4,
+    VictoryPointsToWin: 6
+  }, 77, 0.57);
 }
 updateDatabase();
