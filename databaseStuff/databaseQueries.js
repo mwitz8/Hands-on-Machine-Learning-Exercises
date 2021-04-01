@@ -923,7 +923,7 @@ var updateDatabase = function() {
     MoveFirst: 1,
     CommandCards: 6,
     TacticianCards: 6,
-    VictoryPointsToWin: 6,
+    VictoryPointsToWin: 6
   }, {
     French: 1,
     LineInfantry: 8,
@@ -935,5 +935,242 @@ var updateDatabase = function() {
     TacticianCards: 4,
     VictoryPointsToWin: 6
   }, 77, 0.57);
+  addCombination({ //103 Gamonal
+    Spanish: 1,
+    LineInfantry: 5,
+    GrenadierInfantry: 2,
+    MilitiaInfantry: 1,
+    LightCavalry: 3,
+    HeavyCavalry: 1,
+    FootArtillery: 2,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 2,
+    VictoryPointsToWin: 6
+  }, {
+    French: 1,
+    LineInfantry: 6,
+    LightInfantry: 2,
+    MilitiaInfantry: 1,
+    LightCavalry: 2,
+    HeavyCavalry: 3,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 6,
+    TacticianCards: 5,
+    MoveFirst: 1,
+    VictoryPointsToWin: 6
+  }, 52, 0.17);
+  addCombination({ //104 Espinosa de los Monteros
+    Spanish: 1,
+    LineInfantry: 6,
+    LightInfantry: 2,
+    GrenadierInfantry: 2,
+    MilitiaInfantry: 3,
+    LightCavalry: 2,
+    FootArtillery: 2,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 7
+  }, {
+    French: 1,
+    LineInfantry: 10,
+    MoveFirst: 1,
+    LightInfantry: 2,
+    LightCavalry: 2,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 7
+  }, 75, 0.47);
+  addCombination({ //105 Somosierra
+    Spanish: 1,
+    LineInfantry: 9,
+    LightInfantry: 1,
+    GrenadierInfantry: 2,
+    LightCavalry: 2,
+    FootArtillery: 3,
+    Commander: 3,
+    FieldWorks: 1,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 7
+  }, {
+    French: 1,
+    LineInfantry: 7,
+    LightInfantry: 3,
+    LightCavalry: 2,
+    GuardLightCavalry: 2,
+    GuardFootArtillery: 1,
+    Commander: 2,
+    CommandCards: 6,
+    TacticianCards: 6,
+    MoveFirst: 1,
+    VictoryPointsToWin: 7
+  }, 46, 0.22);
+  addCombination({ //107 Alcaniz
+    Spanish: 1,
+    LineInfantry: 8,
+    LightInfantry: 1,
+    LightCavalry: 1,
+    FootArtillery: 3,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 6
+  }, {
+    French: 1,
+    LineInfantry: 9.
+    LightCavalry: 1,
+    HeavyCuirassierCavalry: 1,
+    FootArtillery: 2,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 5,
+    MoveFirst: 1,
+    VictoryPointsToWin: 6
+  }, 70, 0.44);
+  addCombination({ //108 Maria
+    Spanish: 1,
+    LineInfantry: 7,
+    LightInfantry: 2,
+    GrenadierInfantry: 1,
+    LightCavalry: 2,
+    FootArtillery: 2,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 3,
+    MoveFirst: 1,
+    VictoryPointsToWin: 6
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightInfantry: 1,
+    LightCavalry: 2,
+    HeavyCuirassierCavalry: 1,
+    FootArtillery: 2,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 6
+  }, 43, 0.37);
+  addCombination({ //110 Tamames
+    Spanish: 1,
+    LineInfantry: 11,
+    LightInfantry: 2,
+    GrenadierInfantry: 2,
+    LightCavalry: 3,
+    HeavyCavalry: 2,
+    FootArtillery: 2,
+    Commander: 4,
+    CommandCards: 6,
+    TacticianCards: 2,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    LineInfantry: 9,
+    LightInfantry: 3,
+    LightCavalry: 3,
+    HeavyCavalry: 1,
+    FootArtillery: 2,
+    HorseArtillery: 1,
+    Commander: 4,
+    MoveFirst: 1,
+    CommandCards: 6,
+    TacticianCards: 3,
+    VictoryPointsToWin: 8
+  }, 42, 0.36);
+  addCombination({ //111 Ocana
+    Spanish: 1,
+    LightCavalry: 7,
+    HeavyCavalry: 5,
+    HeavyCuirassierCavalry: 1,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 7
+  }, {
+    French: 1,
+    LightCavalry: 5,
+    HeavyCavalry: 5,
+    HorseArtillery: 2,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 7
+  }, 31, 0.13);
+  addCombination({ //112 Ocana
+    Spanish: 1,
+    LineInfantry: 9,
+    LightInfantry: 1,
+    GrenadierInfantry: 1,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    FootArtillery: 1,
+    Commander: 4,
+    CommandCards: 4,
+    TacticianCards: 3,
+    VictoryPointsToWin: 6
+  }, {
+    French: 1,
+    LineInfantry: 8,
+    LightInfantry: 2,
+    HeavyCavalry: 2,
+    LightLancerCavalry: 1,
+    FootArtillery: 1,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 5,
+    MoveFirst: 1,
+    VictoryPointsToWin: 6
+  }, 29, 0.28);
+  addCombination({ //113 Alba de Tormes
+    Spanish: 1,
+    LineInfantry: 7,
+    MilitiaInfantry: 3,
+    LightCavalry: 3,
+    FootArtillery: 1,
+    Commander: 2,
+    CommandCards: 4,
+    TacticianCards: 2,
+    VictoryPointsToWin: 6
+  }, {
+    French: 1,
+    LightCavalry: 3,
+    HeavyCavalry: 6,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 4,
+    MoveFirst: 1,
+    VictoryPointsToWin: 6
+  }, 27, 0.0);
+  addCombination({ //117 San Marcial
+    Spanish: 1,
+    LineInfantry: 6,
+    LightInfantry: 2,
+    GrenadierInfantry: 2,
+    MilitiaInfantry: 1,
+    FootArtillery: 2,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsOnSide: 3,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    LineInfantry: 9,
+    LightInfantry: 2,
+    MilitiaInfantry: 2,
+    FootArtillery: 2,
+    Commander: 3,
+    MoveFirst: 1,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 8
+  }, 27, 0.81);
 }
 updateDatabase();
