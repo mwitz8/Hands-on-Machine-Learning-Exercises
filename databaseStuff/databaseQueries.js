@@ -1721,5 +1721,34 @@ var updateDatabase = function() {
     TacticianCards: 3,
     VictoryPointsToWin: 10
   }, 83, 0.48);
+  addCombination({ //217 Crossing the Berezina
+    Russian: 1,
+    MoveFirst: 1,
+    LineInfantry: 5,
+    LightInfantry: 4,
+    GrenadierInfantry: 2,
+    MilitiaInfantry: 1,
+    LightCavalry: 1,
+    HeavyCavalry: 2,
+    CossackCavalry: 1,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 3,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 7
+  }, {
+    French: 1,
+    LineInfantry: 7,
+    LightInfantry: 2,
+    OldGuardInfantry: 1,
+    LightCavalry: 1,
+    HeavyCuirassierCavalry: 1,
+    FootArtillery: 2,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 7
+  }, 37, 0.51)
 }
 updateDatabase();
