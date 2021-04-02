@@ -17,7 +17,7 @@ const pool = new Pool({
 var index = 0;
 
 var addCombination = function(side1, side2, games, percentSide1Won) {
-  var addBattles = function(side1, side2, amount, side1Won) {
+  var addBattles = function(side1, side2, amount, side1Won, table) {
     var columns = ["ID", "French", "British", "Portuguese", "Spanish", "Russian", "Austrian", "Prussian", "Commander", "LineInfantry", "LightInfantry", "GrenadierInfantry", "YoungGuard", "OldGuardInfantry", "MilitiaInfantry", "FootArtillery", "GuardFootArtillery", "HorseArtillery", "GuardHorseArtillery", "LightCavalry", "LightLancerCavalry", "GuardLightCavalry", "HeavyCavalry", "HeavyCuirassierCavalry", "GuardHeavyCavalry", "RifleLightInfantry", "GuardGrenadierInfantry", "RocketBattery", "GuardLightInfantry", "MilitiaLancerCavalry", "CossackCavalry", "GrenzerInfantry", "ReserveInfantry", "FieldWorks", "Castles", "VictoryPointsOnSide", "VictoryPointsToWin", "CommandCards", "TacticianCards", "MoveFirst"];
     for (let i = 0; i < columns.length; i++) {
       if (!side1[columns[i]]) {
@@ -29,7 +29,7 @@ var addCombination = function(side1, side2, games, percentSide1Won) {
     }
     for (let i = 0; i < games; i++) {
       pool.query(`
-        INSERT INTO public."Battles"(
+        INSERT INTO public."${table}"(
           "ID", "French1", "British1", "Portuguese1", "Spanish1", "Russian1", "Austrian1", "Prussian1", "Commander1", "LineInfantry1", "LightInfantry1", "GrenadierInfantry1", "YoungGuard1", "OldGuardInfantry1", "MilitiaInfantry1", "FootArtillery1", "GuardFootArtillery1", "HorseArtillery1", "GuardHorseArtillery1", "LightCavalry1", "LightLancerCavalry1", "GuardLightCavalry1", "HeavyCavalry1", "HeavyCuirassierCavalry1", "GuardHeavyCavalry1", "RifleLightInfantry1", "GuardGrenadierInfantry1", "RocketBattery1", "GuardLightInfantry1", "MilitiaLancerCavalry1", "CossackCavalry1", "GrenzerInfantry1", "ReserveInfantry1", "FieldWorks1", "Castles1", "VictoryPointsOnSide1", "VictoryPointsToWin1", "French2", "British2", "Portuguese2", "Spanish2", "Russian2", "Austrian2", "Prussian2", "Commander2", "LineInfantry2", "LightInfantry2", "GrenadierInfantry2", "YoungGuard2", "OldGuardInfantry2", "MilitiaInfantry2", "FootArtillery2", "GuardFootArtillery2", "HorseArtillery2", "GuardHorseArtillery2", "LightCavalry2", "LightLancerCavalry2", "GuardLightCavalry2", "HeavyCavalry2", "HeavyCuirassierCavalry2", "GuardHeavyCavalry2", "RifleLightInfantry2", "GuardGrenadierInfantry2", "RocketBattery2", "GuardLightInfantry2", "MilitiaLancerCavalry2", "CossackCavalry2", "GrenzerInfantry2", "ReserveInfantry2", "FieldWorks2", "Castles2", "VictoryPointsOnSide2", "VictoryPointsToWin2", "CommandCards1", "CommandCards2", "TacticianCards1", "TacticianCards2", "MoveFirst1", "MoveFirst2", "1Won"
         ) VALUES (
           ${index}, ${side1.French}, ${side1.British}, ${side1.Portuguese}, ${side1.Spanish}, ${side1.Russian}, ${side1.Austrian}, ${side1.Prussian}, ${side1.Commander}, ${side1.LineInfantry}, ${side1.LightInfantry}, ${side1.GrenadierInfantry}, ${side1.YoungGuard}, ${side1.OldGuardInfantry}, ${side1.MilitiaInfantry}, ${side1.FootArtillery}, ${side1.GuardFootArtillery}, ${side1.HorseArtillery}, ${side1.GuardHorseArtillery}, ${side1.LightCavalry}, ${side1.LightLancerCavalry}, ${side1.GuardLightCavalry}, ${side1.HeavyCavalry}, ${side1.HeavyCuirassierCavalry}, ${side1.GuardHeavyCavalry}, ${side1.RifleLightInfantry}, ${side1.GuardGrenadierInfantry}, ${side1.RocketBattery}, ${side1.GuardLightInfantry}, ${side1.MilitiaLancerCavalry}, ${side1.CossackCavalry}, ${side1.GrenzerInfantry}, ${side1.ReserveInfantry}, ${side1.FieldWorks}, ${side1.Castles}, ${side1.VictoryPointsOnSide}, ${side1.VictoryPointsToWin}, ${side2.French}, ${side2.British}, ${side2.Portuguese}, ${side2.Spanish}, ${side2.Russian}, ${side2.Austrian}, ${side2.Prussian}, ${side2.Commander}, ${side2.LineInfantry}, ${side2.LightInfantry}, ${side2.GrenadierInfantry}, ${side2.YoungGuard}, ${side2.OldGuardInfantry}, ${side2.MilitiaInfantry}, ${side2.FootArtillery}, ${side2.GuardFootArtillery}, ${side2.HorseArtillery}, ${side2.GuardHorseArtillery}, ${side2.LightCavalry}, ${side2.LightLancerCavalry}, ${side2.GuardLightCavalry}, ${side2.HeavyCavalry}, ${side2.HeavyCuirassierCavalry}, ${side2.GuardHeavyCavalry}, ${side2.RifleLightInfantry}, ${side2.GuardGrenadierInfantry}, ${side2.RocketBattery}, ${side2.GuardLightInfantry}, ${side2.MilitiaLancerCavalry}, ${side2.CossackCavalry}, ${side2.GrenzerInfantry}, ${side2.ReserveInfantry}, ${side2.FieldWorks}, ${side2.Castles}, ${side2.VictoryPointsOnSide}, ${side2.VictoryPointsToWin}, ${side1.CommandCards}, ${side2.CommandCards}, ${side1.TacticianCards}, ${side2.TacticianCards}, ${side1.MoveFirst}, ${side2.MoveFirst}, ${side1Won}
@@ -41,10 +41,16 @@ var addCombination = function(side1, side2, games, percentSide1Won) {
       index++;
     }
   }
-  addBattles(side1, side2, Math.round(games * percentSide1Won), 1);
-  addBattles(side1, side2, Math.round(games * (1 - percentSide1Won)), 0);
-  addBattles(side2, side1, Math.round(games * (1 - percentSide1Won)), 1);
-  addBattles(side2, side1, Math.round(games * percentSide1Won), 0);
+  let table = '';
+  if (Math.random() <= 0.2) {
+    table = 'BattlesTest';
+  } else {
+    table = "BattlesTraining";
+  }
+  addBattles(side1, side2, Math.round(games * percentSide1Won), 1, table);
+  addBattles(side1, side2, Math.round(games * (1 - percentSide1Won)), 0, table);
+  addBattles(side2, side1, Math.round(games * (1 - percentSide1Won)), 1, table);
+  addBattles(side2, side1, Math.round(games * percentSide1Won), 0, table);
 }
 
 var updateDatabase = function() {
@@ -1988,117 +1994,117 @@ var updateDatabase = function() {
     TacticianCards: 4,
     VictoryPointsToWin: 10
   }, 24, 0.54);
+  addCombination({ //418 Ligny
+    Prussian: 1,
+    VictoryPointsOnSide: 2,
+    LineInfantry: 7,
+    LightInfantry: 1,
+    GrenadierInfantry: 1,
+    ReserveInfantry: 2,
+    MilitiaInfantry: 4,
+    LightCavalry: 1,
+    HeavyCavalry: 1,
+    LightLancerCavalry: 1,
+    MilitiaLancerCavalry: 1,
+    FootArtillery: 2,
+    Commander: 5,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 11
+  }, {
+    French: 1,
+    MoveFirst: 1,
+    LineInfantry: 7,
+    LightInfantry: 3,
+    YoungGuard: 2,
+    OldGuardInfantry: 2,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    FootArtillery: 4,
+    GuardFootArtillery: 1,
+    Commander: 5,
+    CommandCards: 6,
+    TacticianCards: 6,
+    VictoryPointsToWin: 11
+  }, 39, 0.33);
+  addCombination({ //419 Plancenoit
+    Prussian: 1,
+    MoveFirst: 1,
+    LineInfantry: 7,
+    LightInfantry: 3,
+    ReserveInfantry: 5,
+    MilitiaInfantry: 2,
+    LightCavalry: 3,
+    FootArtillery: 2,
+    Commander: 5,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsToWin: 9
+  }, {
+    French:1,
+    VictoryPointsOnSide: 2,
+    LineInfantry: 5,
+    LightInfantry: 1,
+    YoungGuard: 3,
+    OldGuardInfantry: 2,
+    LightCavalry: 1,
+    LightLancerCavalry: 1,
+    FootArtillery: 2,
+    GuardFootArtillery: 1,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 5,
+    VictoryPointsOnSide: 9
+  }, 49, 0.37);
+  addCombination({ //420 Wavre
+    Prussian: 1,
+    LineInfantry: 4,
+    GrenadierInfantry: 1,
+    ReserveInfantry: 3,
+    MilitiaInfantry: 3,
+    LightCavalry: 1,
+    LightLancerCavalry: 1,
+    FootArtillery: 1,
+    HorseArtillery: 1,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 8
+  }, {
+    French: 1,
+    MoveFirst: 1,
+    LineInfantry: 11,
+    LightInfantry: 3,
+    LightCavalry: 2,
+    HeavyCavalry: 1,
+    FootArtillery: 2,
+    Commander: 4,
+    CommandCards: 5,
+    TacticianCards: 3,
+    VictoryPointsToWin: 8
+  }, 23, 0.35);
+  addCombination({ //MB01 Issy
+    Prussian: 1,
+    MoveFirst: 1,
+    LightInfantry: 2,
+    LineInfantry: 6,
+    FootArtillery: 3,
+    MilitiaInfantry: 3,
+    LightCavalry: 1,
+    LightLancerCavalry: 1,
+    Commander: 3,
+    CommandCards: 4,
+    TacticianCards: 3,
+    VictoryPointsToWin: 7
+  }, {
+    VictoryPointsOnSide: 2,
+    LightInfantry: 1,
+    LineInfantry: 7,
+    FootArtillery: 2,
+    Commander: 2,
+    CommandCards: 5,
+    TacticianCards: 4,
+    VictoryPointsToWin: 7
+  }, 1, 0.0);
 }
-addCombination({ //418 Ligny
-  Prussian: 1,
-  VictoryPointsOnSide: 2,
-  LineInfantry: 7,
-  LightInfantry: 1,
-  GrenadierInfantry: 1,
-  ReserveInfantry: 2,
-  MilitiaInfantry: 4,
-  LightCavalry: 1,
-  HeavyCavalry: 1,
-  LightLancerCavalry: 1,
-  MilitiaLancerCavalry: 1,
-  FootArtillery: 2,
-  Commander: 5,
-  CommandCards: 5,
-  TacticianCards: 5,
-  VictoryPointsToWin: 11
-}, {
-  French: 1,
-  MoveFirst: 1,
-  LineInfantry: 7,
-  LightInfantry: 3,
-  YoungGuard: 2,
-  OldGuardInfantry: 2,
-  LightCavalry: 2,
-  HeavyCavalry: 1,
-  FootArtillery: 4,
-  GuardFootArtillery: 1,
-  Commander: 5,
-  CommandCards: 6,
-  TacticianCards: 6,
-  VictoryPointsToWin: 11
-}, 39, 0.33);
-addCombination({ //419 Plancenoit
-  Prussian: 1,
-  MoveFirst: 1,
-  LineInfantry: 7,
-  LightInfantry: 3,
-  ReserveInfantry: 5,
-  MilitiaInfantry: 2,
-  LightCavalry: 3,
-  FootArtillery: 2,
-  Commander: 5,
-  CommandCards: 5,
-  TacticianCards: 5,
-  VictoryPointsToWin: 9
-}, {
-  French:1,
-  VictoryPointsOnSide: 2,
-  LineInfantry: 5,
-  LightInfantry: 1,
-  YoungGuard: 3,
-  OldGuardInfantry: 2,
-  LightCavalry: 1,
-  LightLancerCavalry: 1,
-  FootArtillery: 2,
-  GuardFootArtillery: 1,
-  Commander: 4,
-  CommandCards: 5,
-  TacticianCards: 5,
-  VictoryPointsOnSide: 9
-}, 49, 0.37);
-addCombination({ //420 Wavre
-  Prussian: 1,
-  LineInfantry: 4,
-  GrenadierInfantry: 1,
-  ReserveInfantry: 3,
-  MilitiaInfantry: 3,
-  LightCavalry: 1,
-  LightLancerCavalry: 1,
-  FootArtillery: 1,
-  HorseArtillery: 1,
-  Commander: 4,
-  CommandCards: 5,
-  TacticianCards: 3,
-  VictoryPointsToWin: 8
-}, {
-  French: 1,
-  MoveFirst: 1,
-  LineInfantry: 11,
-  LightInfantry: 3,
-  LightCavalry: 2,
-  HeavyCavalry: 1,
-  FootArtillery: 2,
-  Commander: 4,
-  CommandCards: 5,
-  TacticianCards: 3,
-  VictoryPointsToWin: 8
-}, 23, 0.35);
-addCombination({ //MB01 Issy
-  Prussian: 1,
-  MoveFirst: 1,
-  LightInfantry: 2,
-  LineInfantry: 6,
-  FootArtillery: 3,
-  MilitiaInfantry: 3,
-  LightCavalry: 1,
-  LightLancerCavalry: 1,
-  Commander: 3,
-  CommandCards: 4,
-  TacticianCards: 3,
-  VictoryPointsToWin: 7
-}, {
-  VictoryPointsOnSide: 2,
-  LightInfantry: 1,
-  LineInfantry: 7,
-  FootArtillery: 2,
-  Commander: 2,
-  CommandCards: 5,
-  TacticianCards: 4,
-  VictoryPointsToWin: 7
-}, 1, 0.0);
 updateDatabase();
