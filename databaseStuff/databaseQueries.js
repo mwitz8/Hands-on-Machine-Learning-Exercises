@@ -1030,7 +1030,7 @@ var updateDatabase = function() {
     VictoryPointsToWin: 6
   }, {
     French: 1,
-    LineInfantry: 9.
+    LineInfantry: 9,
     LightCavalry: 1,
     HeavyCuirassierCavalry: 1,
     FootArtillery: 2,
@@ -1444,7 +1444,7 @@ var updateDatabase = function() {
     HorseArtillery: 1,
     Commander: 4,
     CommandCards: 6,
-    TacticianCards: 6
+    TacticianCards: 6,
     VictoryPointsToWin: 9
   }, 38, 0.50);
   addCombination({ //318 Wagram
@@ -1551,7 +1551,7 @@ var updateDatabase = function() {
     MoveFirst: 1,
     VictoryPointsToWin: 5
   }, 5, 0.20);
-  addCombinaton({ //210 Borodino
+  addCombination({ //210 Borodino
     VictoryPointsOnSide: 1,
     FieldWorks: 1,
     Russian: 1,
@@ -1664,7 +1664,7 @@ var updateDatabase = function() {
     FootArtillery: 3,
     GuardFootArtillery: 1,
     Commander: 4,
-    CommandCards: 6.
+    CommandCards: 6,
     TacticianCards: 6,
     VictoryPointsToWin: 10
   }, 72, 0.56);
@@ -1906,7 +1906,7 @@ var updateDatabase = function() {
     HorseArtillery: 2,
     Commander: 4,
     CommandCards: 6,
-    TacticianCards: 6
+    TacticianCards: 6,
     VictoryPointsToWin: 9
   }, 19, 0.37);
   addCombination({ //505 Wartenburg
