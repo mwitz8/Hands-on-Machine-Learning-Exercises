@@ -18,7 +18,7 @@ var index = 0;
 
 var addCombination = function(side1, side2, games, percentSide1Won) {
   var addBattles = function(side1, side2, amount, side1Won, table) {
-    var columns = ["ID", "French", "British", "Portuguese", "Spanish", "Russian", "Austrian", "Prussian", "Commander", "LineInfantry", "LightInfantry", "GrenadierInfantry", "YoungGuard", "OldGuardInfantry", "MilitiaInfantry", "FootArtillery", "GuardFootArtillery", "HorseArtillery", "GuardHorseArtillery", "LightCavalry", "LightLancerCavalry", "GuardLightCavalry", "HeavyCavalry", "HeavyCuirassierCavalry", "GuardHeavyCavalry", "RifleLightInfantry", "GuardGrenadierInfantry", "RocketBattery", "GuardLightInfantry", "MilitiaLancerCavalry", "CossackCavalry", "GrenzerInfantry", "ReserveInfantry", "FieldWorks", "Castles", "VictoryPointsOnSide", "VictoryPointsToWin", "CommandCards", "TacticianCards", "MoveFirst"];
+    var columns = ["ID", "French", "British", "Portuguese", "Spanish", "Russian", "Austrian", "Prussian", "Commander", "LineInfantry", "LightInfantry", "GrenadierInfantry", "YoungGuard", "OldGuardInfantry", "MilitiaInfantry", "FootArtillery", "GuardFootArtillery", "HorseArtillery", "GuardHorseArtillery", "LightCavalry", "LightLancerCavalry", "GuardLightCavalry", "HeavyCavalry", "HeavyCuirassierCavalry", "GuardHeavyCavalry", "RifleLightInfantry", "GuardGrenadierInfantry", "RocketBattery", "GuardLightInfantry", "MilitiaLancerCavalry", "CossackCavalry", "GrenzerInfantry", "ReserveInfantry", "FieldWorks", "Castles", "VictoryPointsOnSide", "VictoryPointsToWin", "CommandCards", "TacticianCards", "MoveFirst", "GuerrillaRule", "GuerrillaCounter", "MotherRussiaRule", "MotherRussiaNoSaber", "MotherRussiaNoCavalry", "IronWillCounter"];
     for (let i = 0; i < columns.length; i++) {
       if (!side1[columns[i]]) {
         side1[columns[i]] = 0;
@@ -27,12 +27,12 @@ var addCombination = function(side1, side2, games, percentSide1Won) {
         side2[columns[i]] = 0;
       }
     }
-    for (let i = 0; i < games; i++) {
+    for (let i = 0; i < amount; i++) {
       pool.query(`
         INSERT INTO public."${table}"(
-          "ID", "French1", "British1", "Portuguese1", "Spanish1", "Russian1", "Austrian1", "Prussian1", "Commander1", "LineInfantry1", "LightInfantry1", "GrenadierInfantry1", "YoungGuard1", "OldGuardInfantry1", "MilitiaInfantry1", "FootArtillery1", "GuardFootArtillery1", "HorseArtillery1", "GuardHorseArtillery1", "LightCavalry1", "LightLancerCavalry1", "GuardLightCavalry1", "HeavyCavalry1", "HeavyCuirassierCavalry1", "GuardHeavyCavalry1", "RifleLightInfantry1", "GuardGrenadierInfantry1", "RocketBattery1", "GuardLightInfantry1", "MilitiaLancerCavalry1", "CossackCavalry1", "GrenzerInfantry1", "ReserveInfantry1", "FieldWorks1", "Castles1", "VictoryPointsOnSide1", "VictoryPointsToWin1", "French2", "British2", "Portuguese2", "Spanish2", "Russian2", "Austrian2", "Prussian2", "Commander2", "LineInfantry2", "LightInfantry2", "GrenadierInfantry2", "YoungGuard2", "OldGuardInfantry2", "MilitiaInfantry2", "FootArtillery2", "GuardFootArtillery2", "HorseArtillery2", "GuardHorseArtillery2", "LightCavalry2", "LightLancerCavalry2", "GuardLightCavalry2", "HeavyCavalry2", "HeavyCuirassierCavalry2", "GuardHeavyCavalry2", "RifleLightInfantry2", "GuardGrenadierInfantry2", "RocketBattery2", "GuardLightInfantry2", "MilitiaLancerCavalry2", "CossackCavalry2", "GrenzerInfantry2", "ReserveInfantry2", "FieldWorks2", "Castles2", "VictoryPointsOnSide2", "VictoryPointsToWin2", "CommandCards1", "CommandCards2", "TacticianCards1", "TacticianCards2", "MoveFirst1", "MoveFirst2", "1Won"
+          "ID", "French1", "British1", "Portuguese1", "Spanish1", "Russian1", "Austrian1", "Prussian1", "Commander1", "LineInfantry1", "LightInfantry1", "GrenadierInfantry1", "YoungGuard1", "OldGuardInfantry1", "MilitiaInfantry1", "FootArtillery1", "GuardFootArtillery1", "HorseArtillery1", "GuardHorseArtillery1", "LightCavalry1", "LightLancerCavalry1", "GuardLightCavalry1", "HeavyCavalry1", "HeavyCuirassierCavalry1", "GuardHeavyCavalry1", "RifleLightInfantry1", "GuardGrenadierInfantry1", "RocketBattery1", "GuardLightInfantry1", "MilitiaLancerCavalry1", "CossackCavalry1", "GrenzerInfantry1", "ReserveInfantry1", "FieldWorks1", "Castles1", "VictoryPointsOnSide1", "VictoryPointsToWin1", "French2", "British2", "Portuguese2", "Spanish2", "Russian2", "Austrian2", "Prussian2", "Commander2", "LineInfantry2", "LightInfantry2", "GrenadierInfantry2", "YoungGuard2", "OldGuardInfantry2", "MilitiaInfantry2", "FootArtillery2", "GuardFootArtillery2", "HorseArtillery2", "GuardHorseArtillery2", "LightCavalry2", "LightLancerCavalry2", "GuardLightCavalry2", "HeavyCavalry2", "HeavyCuirassierCavalry2", "GuardHeavyCavalry2", "RifleLightInfantry2", "GuardGrenadierInfantry2", "RocketBattery2", "GuardLightInfantry2", "MilitiaLancerCavalry2", "CossackCavalry2", "GrenzerInfantry2", "ReserveInfantry2", "FieldWorks2", "Castles2", "VictoryPointsOnSide2", "VictoryPointsToWin2", "CommandCards1", "CommandCards2", "TacticianCards1", "TacticianCards2", "MoveFirst1", "MoveFirst2","GuerrillaRule1", "GuerrillaRule2", "GuerrillaCounter1", "GuerrillaCounter2", "MotherRussiaRule1", "MotherRussiaRule2", "MotherRussiaNoSaber1", "MotherRussiaNoSaber2", "MotherRussiaNoCavalry1", "MotherRussiaNoCavalry2", "IronWillCounter1", "IronWillCounter2", "1Won"
         ) VALUES (
-          ${index}, ${side1.French}, ${side1.British}, ${side1.Portuguese}, ${side1.Spanish}, ${side1.Russian}, ${side1.Austrian}, ${side1.Prussian}, ${side1.Commander}, ${side1.LineInfantry}, ${side1.LightInfantry}, ${side1.GrenadierInfantry}, ${side1.YoungGuard}, ${side1.OldGuardInfantry}, ${side1.MilitiaInfantry}, ${side1.FootArtillery}, ${side1.GuardFootArtillery}, ${side1.HorseArtillery}, ${side1.GuardHorseArtillery}, ${side1.LightCavalry}, ${side1.LightLancerCavalry}, ${side1.GuardLightCavalry}, ${side1.HeavyCavalry}, ${side1.HeavyCuirassierCavalry}, ${side1.GuardHeavyCavalry}, ${side1.RifleLightInfantry}, ${side1.GuardGrenadierInfantry}, ${side1.RocketBattery}, ${side1.GuardLightInfantry}, ${side1.MilitiaLancerCavalry}, ${side1.CossackCavalry}, ${side1.GrenzerInfantry}, ${side1.ReserveInfantry}, ${side1.FieldWorks}, ${side1.Castles}, ${side1.VictoryPointsOnSide}, ${side1.VictoryPointsToWin}, ${side2.French}, ${side2.British}, ${side2.Portuguese}, ${side2.Spanish}, ${side2.Russian}, ${side2.Austrian}, ${side2.Prussian}, ${side2.Commander}, ${side2.LineInfantry}, ${side2.LightInfantry}, ${side2.GrenadierInfantry}, ${side2.YoungGuard}, ${side2.OldGuardInfantry}, ${side2.MilitiaInfantry}, ${side2.FootArtillery}, ${side2.GuardFootArtillery}, ${side2.HorseArtillery}, ${side2.GuardHorseArtillery}, ${side2.LightCavalry}, ${side2.LightLancerCavalry}, ${side2.GuardLightCavalry}, ${side2.HeavyCavalry}, ${side2.HeavyCuirassierCavalry}, ${side2.GuardHeavyCavalry}, ${side2.RifleLightInfantry}, ${side2.GuardGrenadierInfantry}, ${side2.RocketBattery}, ${side2.GuardLightInfantry}, ${side2.MilitiaLancerCavalry}, ${side2.CossackCavalry}, ${side2.GrenzerInfantry}, ${side2.ReserveInfantry}, ${side2.FieldWorks}, ${side2.Castles}, ${side2.VictoryPointsOnSide}, ${side2.VictoryPointsToWin}, ${side1.CommandCards}, ${side2.CommandCards}, ${side1.TacticianCards}, ${side2.TacticianCards}, ${side1.MoveFirst}, ${side2.MoveFirst}, ${side1Won}
+          ${index}, ${side1.French}, ${side1.British}, ${side1.Portuguese}, ${side1.Spanish}, ${side1.Russian}, ${side1.Austrian}, ${side1.Prussian}, ${side1.Commander}, ${side1.LineInfantry}, ${side1.LightInfantry}, ${side1.GrenadierInfantry}, ${side1.YoungGuard}, ${side1.OldGuardInfantry}, ${side1.MilitiaInfantry}, ${side1.FootArtillery}, ${side1.GuardFootArtillery}, ${side1.HorseArtillery}, ${side1.GuardHorseArtillery}, ${side1.LightCavalry}, ${side1.LightLancerCavalry}, ${side1.GuardLightCavalry}, ${side1.HeavyCavalry}, ${side1.HeavyCuirassierCavalry}, ${side1.GuardHeavyCavalry}, ${side1.RifleLightInfantry}, ${side1.GuardGrenadierInfantry}, ${side1.RocketBattery}, ${side1.GuardLightInfantry}, ${side1.MilitiaLancerCavalry}, ${side1.CossackCavalry}, ${side1.GrenzerInfantry}, ${side1.ReserveInfantry}, ${side1.FieldWorks}, ${side1.Castles}, ${side1.VictoryPointsOnSide}, ${side1.VictoryPointsToWin}, ${side2.French}, ${side2.British}, ${side2.Portuguese}, ${side2.Spanish}, ${side2.Russian}, ${side2.Austrian}, ${side2.Prussian}, ${side2.Commander}, ${side2.LineInfantry}, ${side2.LightInfantry}, ${side2.GrenadierInfantry}, ${side2.YoungGuard}, ${side2.OldGuardInfantry}, ${side2.MilitiaInfantry}, ${side2.FootArtillery}, ${side2.GuardFootArtillery}, ${side2.HorseArtillery}, ${side2.GuardHorseArtillery}, ${side2.LightCavalry}, ${side2.LightLancerCavalry}, ${side2.GuardLightCavalry}, ${side2.HeavyCavalry}, ${side2.HeavyCuirassierCavalry}, ${side2.GuardHeavyCavalry}, ${side2.RifleLightInfantry}, ${side2.GuardGrenadierInfantry}, ${side2.RocketBattery}, ${side2.GuardLightInfantry}, ${side2.MilitiaLancerCavalry}, ${side2.CossackCavalry}, ${side2.GrenzerInfantry}, ${side2.ReserveInfantry}, ${side2.FieldWorks}, ${side2.Castles}, ${side2.VictoryPointsOnSide}, ${side2.VictoryPointsToWin}, ${side1.CommandCards}, ${side2.CommandCards}, ${side1.TacticianCards}, ${side2.TacticianCards}, ${side1.MoveFirst}, ${side2.MoveFirst}, ${side1.GuerrillaRule}, ${side2.GuerrillaRule}, ${side1.GuerrillaCounter}, ${side2.GuerrillaCounter}, ${side1.MotherRussiaRule}, ${side2.MotherRussiaRule}, ${side1.MotherRussiaNoSaber}, ${side2.MotherRussiaNoSaber}, ${side1.MotherRussiaNoCavalry}, ${side2.MotherRussiaNoCavalry}, ${side1.IronWillCounter}, ${side2.IronWillCounter}, ${side1Won}
         );
         `, (err, res) => {
         console.log(err, res);
@@ -47,17 +47,24 @@ var addCombination = function(side1, side2, games, percentSide1Won) {
   } else {
     table = "BattlesTraining";
   }
-  addBattles(side1, side2, Math.round(games * percentSide1Won), 1, table);
-  addBattles(side1, side2, Math.round(games * (1 - percentSide1Won)), 0, table);
-  addBattles(side2, side1, Math.round(games * (1 - percentSide1Won)), 1, table);
-  addBattles(side2, side1, Math.round(games * percentSide1Won), 0, table);
+  if (table === "BattlesTraining") {
+    // addBattles(side1, side2, Math.round(games * percentSide1Won), 1, table);
+    // addBattles(side1, side2, Math.round(games * (1 - percentSide1Won)), 0, table);
+    // addBattles(side2, side1, Math.round(games * (1 - percentSide1Won)), 1, table);
+    // addBattles(side2, side1, Math.round(games * percentSide1Won), 0, table);
+    addBattles(side1, side2, games, percentSide1Won, table);
+    addBattles(side2, side1, games, 1 - percentSide1Won, table);
+  }
+  if (table === "BattlesTest") {
+    addBattles(side1, side2, 1, percentSide1Won, table);
+  }
 }
 
 var updateDatabase = function() {
   pool.query(`
     DELETE FROM public."Battles";
   `);
-  addCombination({ //MM1 Jemappes
+  addCombination({ //MM11 Jemappes
     Austrian: 1,
     LineInfantry: 4,
     LightInfantry: 2,
@@ -381,7 +388,10 @@ var updateDatabase = function() {
     VictoryPointsOnSide: 1,
     VictoryPointsToWin: 7,
     CommandCards: 5,
-    TacticianCards: 4
+    TacticianCards: 4,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1,
+    MotherRussiaNoCavalry: 1
   }, {
     French: 1,
     LineInfantry: 4,
@@ -412,7 +422,9 @@ var updateDatabase = function() {
     CommandCards: 4,
     TacticianCards: 3,
     VictoryPointsOnSide: 1,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1
   }, {
     French: 1,
     LineInfantry: 9,
@@ -489,7 +501,8 @@ var updateDatabase = function() {
     Commander: 2,
     CommandCards: 5,
     TacticianCards: 4,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    MotherRussiaRule: 1
   }, {
     French: 1,
     LineInfantry: 9,
@@ -571,7 +584,8 @@ var updateDatabase = function() {
     VictoryPointsOnSide: 3,
     VictoryPointsToWin: 8,
     CommandCards: 5,
-    TacticianCards: 4
+    TacticianCards: 4,
+    MotherRussiaRule: 1
   }, {
     French: 1,
     LineInfantry: 7,
@@ -599,7 +613,8 @@ var updateDatabase = function() {
     Commander: 4,
     CommandCards: 5,
     TacticianCards: 4,
-    VictoryPointsToWin: 8
+    VictoryPointsToWin: 8,
+    MotherRussiaRule: 1
   }, {
     French: 1,
     LineInfantry: 7,
@@ -627,7 +642,8 @@ var updateDatabase = function() {
     Commander: 3,
     CommandCards: 4,
     TacticianCards: 4,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    IronWillCounter: 3
   }, {
     French: 1,
     MoveFirst: 1,
@@ -655,7 +671,8 @@ var updateDatabase = function() {
     VictoryPointsOnSide: 1,
     VictoryPointsToWin: 8,
     CommandCards: 4,
-    TacticianCards: 3
+    TacticianCards: 3,
+    IronWillCounter: 3
   }, {
     French: 1,
     LineInfantry: 7,
@@ -952,7 +969,9 @@ var updateDatabase = function() {
     Commander: 2,
     CommandCards: 5,
     TacticianCards: 2,
-    VictoryPointsToWin: 6
+    VictoryPointsToWin: 6,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LineInfantry: 6,
@@ -979,7 +998,9 @@ var updateDatabase = function() {
     Commander: 3,
     CommandCards: 5,
     TacticianCards: 3,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LineInfantry: 10,
@@ -1004,7 +1025,9 @@ var updateDatabase = function() {
     FieldWorks: 1,
     CommandCards: 4,
     TacticianCards: 2,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LineInfantry: 7,
@@ -1027,7 +1050,9 @@ var updateDatabase = function() {
     Commander: 3,
     CommandCards: 5,
     TacticianCards: 3,
-    VictoryPointsToWin: 6
+    VictoryPointsToWin: 6,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LineInfantry: 9,
@@ -1051,7 +1076,9 @@ var updateDatabase = function() {
     CommandCards: 5,
     TacticianCards: 3,
     MoveFirst: 1,
-    VictoryPointsToWin: 6
+    VictoryPointsToWin: 6,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LineInfantry: 8,
@@ -1075,7 +1102,9 @@ var updateDatabase = function() {
     Commander: 4,
     CommandCards: 6,
     TacticianCards: 2,
-    VictoryPointsToWin: 8
+    VictoryPointsToWin: 8,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LineInfantry: 9,
@@ -1098,7 +1127,9 @@ var updateDatabase = function() {
     Commander: 2,
     CommandCards: 5,
     TacticianCards: 3,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LightCavalry: 5,
@@ -1120,7 +1151,8 @@ var updateDatabase = function() {
     Commander: 4,
     CommandCards: 4,
     TacticianCards: 3,
-    VictoryPointsToWin: 6
+    VictoryPointsToWin: 6,
+    GuerrillaRule: 1
   }, {
     French: 1,
     LineInfantry: 8,
@@ -1143,7 +1175,8 @@ var updateDatabase = function() {
     Commander: 2,
     CommandCards: 4,
     TacticianCards: 2,
-    VictoryPointsToWin: 6
+    VictoryPointsToWin: 6,
+    GuerrillaRule: 1
   }, {
     French: 1,
     LightCavalry: 3,
@@ -1165,7 +1198,9 @@ var updateDatabase = function() {
     CommandCards: 5,
     TacticianCards: 3,
     VictoryPointsOnSide: 3,
-    VictoryPointsToWin: 8
+    VictoryPointsToWin: 8,
+    GuerrillaRule: 1,
+    GuerrillaCounter: 1
   }, {
     French: 1,
     LineInfantry: 9,
@@ -1566,7 +1601,10 @@ var updateDatabase = function() {
     Commander: 2,
     CommandCards: 5,
     TacticianCards: 4,
-    VictoryPointsToWin: 10
+    VictoryPointsToWin: 10,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1,
+    MotherRussiaNoCavalry: 1
   }, {
     French: 1,
     MoveFirst: 1,
@@ -1595,7 +1633,10 @@ var updateDatabase = function() {
     Commander: 2,
     CommandCards: 5,
     TacticianCards: 3,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1,
+    MotherRussiaNoCavalry: 1
   }, {
     MoveFirst: 1,
     French: 1,
@@ -1622,7 +1663,10 @@ var updateDatabase = function() {
     Commander: 3,
     CommandCards: 5,
     TacticianCards: 2,
-    VictoryPointsToWin: 7
+    VictoryPointsToWin: 7,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1,
+    MotherRussiaNoCavalry: 1
   }, {
     French: 1,
     MoveFirst: 1,
@@ -1651,7 +1695,10 @@ var updateDatabase = function() {
     Commander: 3,
     CommandCards: 5,
     TacticianCards: 4,
-    VictoryPointsToWin: 10
+    VictoryPointsToWin: 10,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1,
+    MotherRussiaNoCavalry: 1
   }, {
     French: 1,
     MoveFirst: 1,
@@ -1685,7 +1732,10 @@ var updateDatabase = function() {
     Commander: 3,
     CommandCards: 5,
     TacticianCards: 3,
-    VictoryPointsToWin: 8
+    VictoryPointsToWin: 8,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1,
+    MotherRussiaNoCavalry: 1
   }, {
     French: 1,
     LineInfantry: 8,
@@ -1712,7 +1762,9 @@ var updateDatabase = function() {
     Commander: 4,
     CommandCards: 5,
     TacticianCards: 3,
-    VictoryPointsToWin: 10
+    VictoryPointsToWin: 10,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1
   }, {
     French: 1,
     VictoryPointsOnSide: 2,
@@ -1978,7 +2030,9 @@ var updateDatabase = function() {
     Commander: 4,
     CommandCards: 5,
     TacticianCards: 5,
-    VictoryPointsToWin: 10
+    VictoryPointsToWin: 10,
+    MotherRussiaRule: 1,
+    MotherRussiaNoSaber: 1
   }, {
     French: 1,
     LineInfantry: 5,
