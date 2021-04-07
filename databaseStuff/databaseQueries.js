@@ -58,6 +58,8 @@ var addCombination = function(side1, side2, games, percentSide1Won) {
   if (table === "BattlesTest") {
     addBattles(side1, side2, 1, percentSide1Won, table);
   }
+  addBattles(side1, side2, games, percentSide1Won, 'BattlesTotal');
+  addBattles(side2, side1, games, 1 - percentSide1Won, 'BattlesTotal');
 }
 
 var updateDatabase = function() {
